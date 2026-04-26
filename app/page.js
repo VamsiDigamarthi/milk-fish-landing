@@ -47,10 +47,9 @@ export default function Home() {
 
       {/* NAV */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-black/60 border-b border-white/5">
-        <div className="flex items-center gap-3">
-          <Image src="/icon.png" alt="Milk Fish" width={36} height={36} className="rounded-xl" />
-          <span className="text-lg font-black tracking-tight gold-text">MILK FISH</span>
-        </div>
+        <a href="/" className="nav-logo-wrap">
+          <Image src="/logo-nav.png" alt="Milk Fish Entertainment" width={148} height={34} priority className="nav-logo" />
+        </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/60 font-medium">
           <a href="#about" className="hover:text-[#D4A017] transition-colors">About</a>
           <a href="#features" className="hover:text-[#D4A017] transition-colors">Features</a>
@@ -60,31 +59,26 @@ export default function Home() {
         </div>
         <a
           href="#download"
-          className="btn-gold px-5 py-2 rounded-full text-sm hidden md:block"
+          className=" px-5 py-2 rounded-full text-sm hidden md:block"
         >
           Get the App
         </a>
       </nav>
 
       {/* HERO */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20 overflow-hidden">
-
-        {/* Background orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-[#D4A017]/5 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-[#D4A017]/5 blur-[120px] pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#D4A017]/3 blur-[200px] pointer-events-none" />
+      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
 
         {/* Age badge */}
-        <div className="fade-in-up mb-8">
+        <div className="mb-8">
           <span className="age-badge inline-block px-4 py-1 rounded-full text-xs font-black tracking-widest uppercase">
             18+ Only
           </span>
         </div>
 
-        {/* Logo */}
-        <div className="fade-in-up-delay-1 fade-in-up mb-8 flex justify-center">
-          <div className="relative">
-            <div className="absolute inset-0 blur-2xl bg-[#D4A017]/20 rounded-full scale-150" />
+        {/* Logo — glow only behind this icon */}
+        <div className="mb-8 flex justify-center">
+          <div className="relative inline-flex">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-[#D4A017]/25 blur-2xl pointer-events-none" aria-hidden />
             <Image
               src="/icon.png"
               alt="Milk Fish Entertainment"
@@ -97,23 +91,23 @@ export default function Home() {
         </div>
 
         {/* Headline */}
-        <h1 className="fade-in-up-delay-2 fade-in-up text-5xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight mb-6">
+        <h1 className="text-4xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight mb-6">
           <span className="block text-white">BOLD STORIES.</span>
-          <span className="block gold-text mt-2">UNAPOLOGETIC</span>
+          <span className="block mt-2">UNAPOLOGETIC</span>
           <span className="block text-white">CONTENT.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="fade-in-up-delay-3 fade-in-up max-w-2xl text-lg md:text-xl text-white/50 leading-relaxed mb-10">
+        <p className="max-w-2xl text-lg md:text-xl text-white/50 leading-relaxed mb-10">
           India&apos;s boldest OTT platform. Exclusive adult web series, short films &amp; originals.
           Stream in HD. Watch anywhere, anytime — fully private.
         </p>
 
         {/* CTAs */}
-        <div className="fade-in-up-delay-4 fade-in-up flex flex-col sm:flex-row items-center gap-4 mb-16">
+        <div className="flex flex-col sm:flex-row items-center gap-4 mb-16">
           <a
             href="#download"
-            className="btn-gold shimmer px-8 py-4 rounded-full text-base font-black tracking-wide pulse-gold inline-flex items-center gap-2"
+            className="btn-gold px-8 py-4 rounded-full text-base font-black tracking-wide inline-flex items-center gap-2"
           >
             <span>📱</span> Download Now — It&apos;s Free
           </a>
@@ -126,7 +120,7 @@ export default function Home() {
         </div>
 
         {/* Stats row */}
-        <div className="fade-in-up-delay-4 fade-in-up w-full max-w-3xl grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="w-full max-w-3xl grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((stat) => (
             <div key={stat.label} className="flex flex-col items-center py-4 px-2 rounded-2xl bg-white/3 border border-white/5">
               <span className="text-2xl md:text-3xl font-black gold-text">{stat.value}</span>
@@ -136,7 +130,7 @@ export default function Home() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bounce opacity-40">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-40">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
             <path d="M12 5v14M5 12l7 7 7-7" stroke="#D4A017" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
@@ -144,7 +138,7 @@ export default function Home() {
       </section>
 
       {/* GOLD DIVIDER */}
-      <div className="gold-divider mx-8 my-0" />
+      {/* <div className="gold-divider mx-8 my-0" /> */}
 
       {/* ABOUT */}
       <section id="about" className="py-24 px-6">
@@ -185,8 +179,8 @@ export default function Home() {
             {/* Visual side */}
             <div className="relative flex justify-center">
               <div className="relative w-64 h-64">
-                <div className="absolute inset-0 rounded-full bg-[#D4A017]/10 blur-3xl scale-150" />
-                <div className="relative w-full h-full rounded-3xl overflow-hidden border border-[#D4A017]/20 bg-black/40 flex items-center justify-center">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-44 h-44 rounded-full bg-[#D4A017]/20 blur-2xl pointer-events-none" aria-hidden />
+                <div className="relative z-[1] w-full h-full rounded-3xl overflow-hidden border border-[#D4A017]/20 bg-black/40 flex items-center justify-center">
                   <Image
                     src="/logo-with-name.png"
                     alt="Milk Fish Entertainment"
@@ -200,7 +194,7 @@ export default function Home() {
               <div className="absolute -top-4 -right-4 bg-[#D4A017] text-black text-xs font-black px-3 py-2 rounded-xl rotate-3">
                 NEW 2025
               </div>
-              <div className="absolute -bottom-4 -left-4 bg-white/5 border border-white/10 text-white text-xs font-medium px-3 py-2 rounded-xl backdrop-blur-sm">
+              <div className="absolute -bottom-4 -left-4 bg-white/5 border border-white/10 text-white text-xs font-medium px-3 py-2 rounded-xl">
                 HD Streaming ✓
               </div>
             </div>
@@ -209,7 +203,7 @@ export default function Home() {
       </section>
 
       {/* GOLD DIVIDER */}
-      <div className="gold-divider mx-8" />
+      {/* <div className="gold-divider mx-8" /> */}
 
       {/* FEATURES */}
       <section id="features" className="py-24 px-6">
@@ -225,7 +219,7 @@ export default function Home() {
             {features.map((f, i) => (
               <div
                 key={i}
-                className="feature-card rounded-2xl bg-white/3 p-6 backdrop-blur-sm"
+                className="feature-card rounded-2xl bg-white/3 p-6"
               >
                 <div className="text-4xl mb-4">{f.icon}</div>
                 <h3 className="text-lg font-bold text-white mb-2">{f.title}</h3>
@@ -237,14 +231,16 @@ export default function Home() {
       </section>
 
       {/* GOLD DIVIDER */}
-      <div className="gold-divider mx-8" />
+      {/* <div className="gold-divider mx-8" /> */}
 
       {/* DOWNLOAD CTA */}
-      <section id="download" className="py-24 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#D4A017]/5 to-transparent pointer-events-none" />
+      <section id="download" className="py-24 px-6 relative">
         <div className="max-w-4xl mx-auto text-center relative">
-          <div className="mb-6">
-            <Image src="/icon.png" alt="Milk Fish" width={80} height={80} className="rounded-2xl mx-auto ring-2 ring-[#D4A017]/40 shadow-xl shadow-[#D4A017]/10" />
+          <div className="mb-6 flex justify-center">
+            <div className="relative inline-flex">
+              <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full bg-[#D4A017]/20 blur-xl pointer-events-none" aria-hidden />
+              <Image src="/icon.png" alt="Milk Fish" width={80} height={80} className="relative z-[1] rounded-2xl ring-2 ring-[#D4A017]/40" />
+            </div>
           </div>
           <p className="text-[#D4A017] text-sm font-bold uppercase tracking-widest mb-4">Download Free</p>
           <h2 className="text-4xl md:text-6xl font-black leading-tight mb-6">
@@ -260,7 +256,7 @@ export default function Home() {
             {/* Google Play */}
             <a
               href="#"
-              className="btn-gold shimmer flex items-center gap-3 px-6 py-4 rounded-2xl font-bold text-left"
+              className="btn-gold flex items-center gap-3 px-6 py-4 rounded-2xl font-bold text-left"
             >
               <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3.18 23.76c.31.17.66.24 1.02.19l11.67-11.67L12.44 9l-9.26 14.76zm-1.06-1.71V1.95L13.37 12 2.12 22.05zM20.05 10.41l-2.29-1.3-3.07 3.07 3.07 3.06 2.32-1.32c.66-.38.66-1.45-.03-1.51zM4.2.05C3.84 0 3.49.07 3.18.24L12.44 9.52l3.44-3.44L4.2.05z"/>

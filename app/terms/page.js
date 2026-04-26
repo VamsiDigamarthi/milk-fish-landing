@@ -124,10 +124,9 @@ export default function TermsPage() {
 
       {/* NAV */}
       <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 backdrop-blur-md bg-black/80 border-b border-white/5">
-        <Link href="/" className="flex items-center gap-3">
-          <Image src="/icon.png" alt="Milk Fish" width={32} height={32} className="rounded-xl" />
-          <span className="font-black text-sm gold-text">MILK FISH</span>
-        </Link>
+      <a href="/" className="nav-logo-wrap">
+          <Image src="/logo-nav.png" alt="Milk Fish Entertainment" width={148} height={34} priority className="nav-logo" />
+        </a>
         <div className="flex items-center gap-4 text-sm text-white/50">
           <Link href="/privacy" className="hover:text-[#D4A017] transition-colors">Privacy Policy</Link>
           <Link href="/" className="btn-gold px-4 py-2 rounded-full text-xs font-bold">← Home</Link>
@@ -135,9 +134,7 @@ export default function TermsPage() {
       </nav>
 
       {/* HERO */}
-      <div className="relative py-20 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#D4A017]/5 to-transparent pointer-events-none" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 rounded-full bg-[#D4A017]/5 blur-[100px] pointer-events-none" />
+      <div className="relative py-20 px-6 text-center">
         <div className="relative">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#D4A017]/30 text-[#D4A017] text-xs font-bold uppercase tracking-widest mb-6">
             <span>📋</span> Legal
